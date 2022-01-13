@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { useHistory, Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import Logo from '../assests/m.PNG';
 import { Form, Input, TextArea, Button } from 'semantic-ui-react';
 import emailjs from 'emailjs-com';

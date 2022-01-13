@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Cart from '../components/Cart';
-import { useStoreContext } from '../utils/GlobalState';
 import {
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
@@ -16,7 +16,8 @@ import { idbPromise } from '../utils/helpers';
 import spinner from '../assests/spinner.gif';
 
 function Detail() {
-  const [state, dispatch] = useStoreContext();
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
   const { id } = useParams();
 
   const [currentProduct, setCurrentProduct] = useState({});
@@ -24,7 +25,7 @@ function Detail() {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   const { products, cart } = state;
-
+  
   useEffect(() => {
     // already in global store
     if (products.length) {
@@ -37,9 +38,9 @@ function Detail() {
         products: data.products,
       });
 
-      data.products.forEach((product) => {
-        idbPromise('products', 'put', product);
-      });
+      // data.products.forEach((product) => {
+      //   idbPromise('products', 'put', product);
+      // });
     }
     // get cache from idb
     else if (!loading) {

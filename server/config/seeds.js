@@ -18,7 +18,7 @@ db.once('open', async () => {
         {
             name: 'Love',
             description: 'made with love in the heart',
-            image: './src/assets/paintings/reds/love.jpg',
+            image: 'love.jpg',
             category: categories[1]._id,
             price: 800,
             quantity: 1
@@ -26,41 +26,41 @@ db.once('open', async () => {
         {
             name: 'Set',
             description: 'made with love in the heart',
-            image: './src/assets/paintings/reds/set.jpg',
+            image: 'set.jpg',
             category: categories[1]._id,
-            price: 800,
+            price: 700,
             quantity: 1
         },
         {
             name: 'Burst',
             description: 'made with love in the heart',
-            image: './src/assets/paintings/reds/burst.jpg',
+            image: 'burst.jpg',
             category: categories[1]._id,
-            price: 800,
+            price: 600,
             quantity: 1
         },
         {
             name: 'Sisters',
             description: 'I am so lucky to have four older sisters. They have taught me how to be a woman, we have entwinded feminity because of this',
-            image: './src/assets/paintings/reds/sisters.jpg',
+            image: 'sisters.jpg',
             category: categories[0]._id,
-            price: 800,
+            price: 500,
             quantity: 1
         },
         {
             name: 'Taking up Space',
             description: 'Being a loud and proud Indigenous woman, I have always recived some form of being "too much". I voice my opinions strongly, laugh loudly, and I will continue to take up as much space as I deem fit. I refuse to let the colony control how I shine.',
-            image: './src/assets/paintings/reds/taking.jpg',
+            image: 'taking.jpg',
             category: categories[0]._id,
-            price: 800,
+            price: 400,
             quantity: 1
         },
         {
             name: 'Winthali',
             description: 'made with love in the heart',
-            image: './src/assets/paintings/reds/Winthali.PNG',
+            image: 'winthali.PNG',
             category: categories[1]._id,
-            price: 800,
+            price: 300,
             quantity: 1
         },
     ]);

@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import React, { Component } from "react";
+//import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {
   ApolloClient,
@@ -10,11 +10,14 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import './App.css';
 
-import { Provider } from 'react-redux';
+import { Provider } from "react-redux";
+import store from "./utils/store";
+
+//import { Provider } from 'react-redux';
 import Navbar from './pages/nav.js';
 import Main from './pages/main.js';
-import store from './store';
-import { StoreProvider } from './utils/GlobalState';
+
+//import { StoreProvider } from './utils/GlobalState';
 import Time from './pages/timelapses';
 import Detail from './pages/Detail.js';
 import Cart from './components/Cart/index.js';
@@ -44,13 +47,12 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-class App extends Component {
-  render() {
-      return(
+function App() {
+  return (
         <ApolloProvider client={client}>
           <Router>
             <div className="App">
-              <StoreProvider>
+            <Provider store={store}>
                 <Navbar/>
                   <Switch>
                     <Route exact path="/" component={Main} />
@@ -61,12 +63,11 @@ class App extends Component {
                   <Detail />
                   <Checkout />
                   <Footer />
-              </StoreProvider>
+              </Provider>
             </div>
           </Router>
         </ApolloProvider>
-      )
-  }
+  )
 }
 
 export default App;
