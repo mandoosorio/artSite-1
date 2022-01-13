@@ -117,22 +117,27 @@ function Main() {
                         <h1 id="title"> Featured Originals </h1>
                         <br />
                         <hr></hr>
-                        {state.products.length ? (
-                            <div className="flex-row">
-                                {filterProducts().map((product) => (
-                                    <ProductItem
-                                    key={product._id}
-                                    _id={product._id}
-                                    image={product.image}
-                                    name={product.name}
-                                    price={product.price}
-                                    quantity={product.quantity}
-                                    />
-                                ))}
-                            </div>
-                        ) : (
-                            <h3>You haven't added any products yet!</h3>
-                        )}
+
+                        <div>
+                            {state.products.length ? (
+                                <div className="flex-row">
+                                    {filterProducts().map((product) => (
+                                        <ProductItem
+                                        key={product._id}
+                                        _id={product._id}
+                                        image={product.image}
+                                        description={product.description}
+                                        name={product.name}
+                                        price={product.price}
+                                        quantity={product.quantity}
+                                        />
+                                    ))}
+                                </div>
+                            ) : (
+                                <h3>You haven't added any products yet!</h3>
+                            )}
+                        </div>
+
                         <div className="row">
                             <div className="card col-md" style={{ width: "30rem" }}>
                                 <div className="card col-md" >

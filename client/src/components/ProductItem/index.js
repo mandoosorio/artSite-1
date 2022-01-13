@@ -15,7 +15,8 @@ function ProductItem(item) {
         name,
         _id,
         price,
-        quantity
+        quantity,
+        description
     } = item;
 
     const { cart } = state;
@@ -53,10 +54,10 @@ function ProductItem(item) {
                 <img className="card-img-top image" src={`/images/${image}`} alt={`/images/${image}`} />
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
-                    <p className="card-text">Oil on canvas</p>
+                    <p className="card-text">{description}</p>
                     <div>
                         <div>{quantity} {pluralize("item", quantity)} in stock</div> 
-                        <span>{price}</span>
+                        <span>AU${price}</span>
                     </div>
                     <button className="addBtn" onClick={addToCart}>Add to cart</button>
                 </div>
